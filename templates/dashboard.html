@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ACEest Fitness</title>
+        <style>
+body{
+background:#1a1a1a;
+color:white;
+font-family:Arial;
+}
+
+.header{
+background:#d4af37;
+color:black;
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+display:flex;
+justify-content:space-between;
+}
+
+.container{
+display:flex;
+padding:20px;
+}
+
+.left{
+width:25%;
+}
+
+.right{
+width:75%;
+}
+
+.box{
+border:1px solid #444;
+padding:15px;
+margin-bottom:20px;
+}
+.add-Client {
+   
+    left: 20px;
+    background: #000;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 130px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <header>ACEest FUNCTIONAL FITNESS</header>
+            <button class="add-Client" onclick="window.location.href='{{ url_for('client_page') }}'">
+                Add Client
+            </button>
+        </div>
+        <div class="container">
+            <div class="left">
+                <label>Select Program</label>
+                <select id="program">
+                    <option value="">Select</option>
+                    {% for p in programs %}
+                    <option value="{{p}}">{{p}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="right">
+                <div class="box">
+                    <h3>Workout Plan</h3>
+                    <p id="workout"></p>
+                </div>
+                <div class="box">
+                    <h3>Diet Plan</h3>
+                    <p id="diet"></p>
+                </div>
+            </div>
+        </div>
+        <script>
+
+document.getElementById("program").addEventListener("change", function(){
+
+let program=this.value
+
+fetch("/program/"+program)
+
+.then(res=>res.json())
+
+.then(data=>{
+
+document.getElementById("workout").innerText=data.workout
+document.getElementById("diet").innerText=data.diet
+document.getElementById("workout").style.color=data.color
+
+})
+
+})
+        </script>
+    </body>
+</html>
