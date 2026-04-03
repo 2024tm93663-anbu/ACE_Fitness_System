@@ -1,3 +1,6 @@
+
+#categories for client 
+
 programs = {
     "Fat Loss (FL)": {
         "workout": (
