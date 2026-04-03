@@ -1,12 +1,12 @@
 import pytest
-import app   # ✅ import full module, not just app object
+import app   #  import full module, not just app object
 
 @pytest.fixture
 def client():
     app.app.config["TESTING"] = True
     app.app.config["PROPAGATE_EXCEPTIONS"] = False
 
-    # ✅ Override programs INSIDE app module
+    #  Override programs INSIDE app module
     app.programs = {
         "weight_loss": {
             "calorie_factor": 10,
