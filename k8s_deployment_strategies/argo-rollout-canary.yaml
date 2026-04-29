@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: aceest-rollout
+spec:
+  replicas: 5
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {}
+      - setWeight: 50
+      - pause: {duration: 30}
+  selector:
+    matchLabels:
+      app: aceest
+  template:
+    metadata:
+      labels:
+        app: aceest
+    spec:
+      containers:
+      - name: aceest
+        image: nginx:latest
+        ports:
+        - containerPort: 80
