@@ -81,7 +81,7 @@ Ensure the following are installed on your machine:
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/aceest-fitness-gym.git
+git clone https://github.com/2024tm93663-anbu/ACE_Fitness_System.git
 cd aceest-fitness-gym
 ```
 
