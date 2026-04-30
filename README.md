@@ -37,7 +37,7 @@ ACEest Fitness & Gym required a robust automated deployment workflow ensuring:
 The solution transitions the application through a complete lifecycle — from local development → automated testing → containerized build → Jenkins quality gate → production-ready deployment.
 
 ---
-
+![alt text](image-2.png)
 ##  Repository Structure
 
 ```
