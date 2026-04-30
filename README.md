@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 > A production-grade DevOps implementation for ACEest Fitness & Gym — a rapidly scaling startup. This project demonstrates a complete CI/CD lifecycle using Flask, Docker, Pytest, GitHub Actions, and Jenkins.
-![alt text](image.png)
+![alt text](image-1.png)
 ---
 
 ## Table of Contents
